@@ -4,7 +4,13 @@ $(document).ready(function () {
 
     if (enteredPassword === 'lasagna') {
       sessionStorage.setItem('signedIn', 'true');
-      window.location.href = 'private.html';
+      
+      // fix for 404 error message
+      if (window.location.pathname.endsWith('signin.html')) {
+        window.location.href = 'private.html';
+      } else {
+        window.location.href = 'pages/private.html';
+      }
     } else {
       $('#message').text('nope. try again.');
     }
