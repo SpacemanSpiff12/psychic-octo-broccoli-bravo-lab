@@ -5,8 +5,8 @@ $(document).ready(function () {
     if (enteredPassword === 'lasagna') {
       sessionStorage.setItem('signedIn', 'true');
       
-      // fix for 404 error message
-      if (window.location.pathname.endsWith('signin.html')) {
+      // take 2 at fixing the 404 error
+      if (window.location.pathname.includes('/pages/')) {
         window.location.href = 'private.html';
       } else {
         window.location.href = 'pages/private.html';
